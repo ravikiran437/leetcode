@@ -4,13 +4,13 @@ class Solution:
         def iso(s):
             d = {}
             c = 1
-            st = ""
+            p  = ""
             for i in s:
                 if i not in d:
-                    st += str(c)
-                    d[i] = c
+                    p += str(c)
+                    d[i] = c 
                     c += 1 
                 else:
-                    st += str(d[i])
-            return st 
+                    p += str(d[i])
+            return p
         if iso(s) == iso(t): return 1
