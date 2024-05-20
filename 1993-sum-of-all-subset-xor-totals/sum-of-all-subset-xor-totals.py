@@ -5,13 +5,10 @@ class Solution:
         k = 2 ** n 
         l = 0
         for i in range(1,k):
-            a = []
+            a = 0
             for j in range(32):
                 if (i>>j)&1 == 1 :
-                    a.append(nums[j])
-            c = 0 
-            for i in a:
-                c ^= i 
-            l += c 
+                    a ^= nums[j]
+            l += a
         return l
             
