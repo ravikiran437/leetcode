@@ -1,13 +1,11 @@
 class Solution:
     def appendCharacters(self, s: str, t: str) -> int:
-        l = list(t)
-        c  = 0 
-        for i in s:
-            if l :
-                if i == l[0]:
-                    c += 1
-                    l.pop(0)
-        return len(t) - c
-
-
-        
+        a = 0
+        b = 0
+        while a < len(s) and b < len(t):
+            if s[a] != t[b]:
+                a += 1
+            else:
+                a += 1
+                b += 1
+        return len(t)-b
