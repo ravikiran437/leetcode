@@ -2,20 +2,20 @@ class Solution:
     def maxProfit(self, nums: List[int]) -> int:
         m = nums[0] 
         c = 0
-        dp = []
+        maxi = 0
         for i in nums[1:]:
-            if m >i and dp == [] :
+            if m >i and maxi == 0 :
                 m = i 
             else:
-                if dp and dp[-1] > i :
-                    c += dp[-1]-m 
+                if maxi > i :
+                    c += maxi - m 
                     m = i 
-                    dp = []
+                    maxi = 0 
                 else:
-                    dp.append(i)
+                    maxi = i 
                 # print(dp)
         #     print(dp,c,m)
-        if dp:
-            c += dp[-1] - m
+        if maxi!=0:
+            c += maxi - m
         return c
                 
