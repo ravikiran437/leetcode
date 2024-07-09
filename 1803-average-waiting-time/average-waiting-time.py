@@ -1,10 +1,11 @@
 class Solution:
     def averageWaitingTime(self, c: List[List[int]]) -> float:
-        t = 0
-        avg = 0
-        for i,j in c:
-            if t < i :
-                t = i 
-            t +=  j 
-            avg += (t-i)
-        return avg/(len(c))
+        cnt = c[0][0] + c[0][1]
+        total = cnt - c[0][0]
+        for i,j in c[1:]:
+            if i > cnt:
+                cnt = i 
+            cnt += j
+            total += cnt - i 
+        # print(total)
+        return total/len(c)
